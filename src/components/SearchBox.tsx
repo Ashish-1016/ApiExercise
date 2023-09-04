@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 function SearchBox({ onSearch }: { onSearch: (query: string) => void }) {
   const [query, setQuery] = useState<string>("");

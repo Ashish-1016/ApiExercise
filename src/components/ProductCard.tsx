@@ -8,44 +8,14 @@ function ProductCard({
   product: IProductCard;
 
 }) {
-  const {id, title, category, price, thumbnail, rating, description } = product;
+  const { title, category, price, thumbnail, rating, description } = product;
 
   const {userId}=useUserContext()
+
+
+  //Dummy Remove from Cart Function
   const handleRemoveFromCart = () => {
-
-    // handleRemoveFromCart(id:number)
-    // const {cartId} = useUserContext()
-    // try {
-    //   const response = await fetch(
-    //       `https://dummyjson.com/carts/${cartId}`,{
-    //        method:'PUT'
-    //       headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     merge: true,
-    //     products: [
-    //       {
-    //         id: id,
-    //         quantity: 0,
-    //       },
-    //     ]
-    //   })
-    // );
-    //   if (!response.ok) {
-    //     throw new Error(`Request failed`);
-    //   }
-    //
-    //   const responseData = await response.json();
-    //   console.log(responseData.carts[0].products);
-    //   setCartItems(responseData.carts[0].products);
-    // } catch (err) {
-    //   console.log(err)
-    // }
-
-
-
-
     const existingCartData = localStorage.getItem(userId);
-
     if (existingCartData) {
       const cart = JSON.parse(existingCartData);
       const updatedProducts = cart.products.filter((p: IProductCard) => p.id !== product.id);
@@ -57,40 +27,11 @@ function ProductCard({
     }
   };
 
+
+  //Dummy Add to Cart Function
   const handleAddToCart = () => {
-
-    {/*
-            handleAddToCart(id:number)
-            try {
-                const response = await fetch(
-                   `https://dummyjson.com/carts/add`,{
-                   method:'POST'
-                   headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                    userId,
-                    products: [
-                     {
-                     id: id,
-                     quantity: 1,
-                      },
-                    ]
-                 })
-               );
-               if (!response.ok) {
-                   throw new Error(`Request failed`);
-               }
-               const responseData = await response.json();
-                console.log(responseData.carts[0].products);
-                setCartItems(responseData.carts[0].products);
-            } catch (err) {
-              console.log(err)
-            }
-     */}
-
     const existingCartData = localStorage.getItem(userId);
-
     let updatedCart;
-
     if (existingCartData) {
       const cart = JSON.parse(existingCartData);
       const existingProduct = cart.products.find((p: IProductCard) => p.id === product.id);
