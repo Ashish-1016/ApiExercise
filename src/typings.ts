@@ -1,3 +1,16 @@
+import {ReactNode} from "react";
+
+export interface IUserContext {
+    userId:string
+}
+export interface IUserProvider{
+    userId:string,
+    children:ReactNode
+}
+
+
+
+
 export  interface IProductCard {
     id: number;
     title: string;
@@ -29,6 +42,5 @@ export  interface IProductCard {
     price: number;
     thumbnail: string;
     rating:number;
+    quantity:number;
  }
- 
- 
