@@ -6,7 +6,7 @@ import SearchBox from "../components/SearchBox.tsx";
 import {Link} from "react-router-dom";
 import {useUserContext} from "../contexts/UserContext.tsx";
 
-export default function Main() {
+export default function HomeMain() {
 
     const {userId}=useUserContext()
     const [products, setProducts] = useState<IProductData["products"]>([]);

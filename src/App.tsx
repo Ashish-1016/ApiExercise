@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserCart from './pages/UserCart.tsx';
 import { UserProvider } from './contexts/UserContext';
-import Main from "./pages/Main.tsx";
+import HomeMain from "./pages/HomeMain.tsx";
 
 function App() {
     const userId = '1'
@@ -9,7 +9,7 @@ function App() {
         <BrowserRouter>
             <UserProvider userId={userId}>
                 <Routes>
-                    <Route path="/" element={<Main />} />
+                    <Route path="/" element={<HomeMain />} />
                     <Route path="/user-cart" element={<UserCart />} />
                 </Routes>
             </UserProvider>
