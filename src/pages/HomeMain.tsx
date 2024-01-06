@@ -56,6 +56,9 @@ export default function HomeMain() {
 
     return (
         <main>
+            <div>
+                This was added by mistake
+            </div>
             <section className="flex justify-between p-3 space-x-1">
                 <SearchBox onSearch={setQuery} />
                 {
